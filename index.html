@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ✅ Sticky Header -->
+    <header class="header">
+      <div class="logo">
+        <img src="images/jaasworld-logo.jpg" alt="Logo" />
+      </div>
+
+      <!-- ✅ Search -->
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Search products..." />
+      </div>
+    </header>
+
+    <!-- ✅ Title + Sort -->
+    <div class="sort-title-row">
+      <h1 class="title">Product Catalog</h1>
+      <div class="sort-box">
+        <select id="sortSelect">
+          <option value="">Sort by Price</option>
+          <option value="low">Low → High</option>
+          <option value="high">High → Low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ✅ Product List -->
+    <div id="product-list" class="product-grid"></div>
+
+    <!-- ✅ Floating Support Button -->
+    <div class="floating-support" id="supportBtn">❔</div>
+
+    <!-- ✅ Floating Menu -->
+    <div class="support-menu" id="supportMenu">
+      <a href="tel:8548801585" class="support-item">📞 Call</a>
+      <a href="https://wa.me/918548801585" target="_blank" class="support-item"
+        >💬 WhatsApp</a
+      >
+      <button class="support-item" id="shippingBtn">🚚 Shipping</button>
+    </div>
+
+    <!-- ✅ Shipping Popup -->
+    <div class="shipping-popup" id="shippingPopup">
+      <div class="shipping-content">
+        <h2>Shipping Details</h2>
+        <ul>
+          <li>All orders are processed within 24 hours.</li>
+          <li>
+            <strong>Delivery time:</strong>
+            <ul>
+              <li>
+                <strong>Nellore:</strong> Orders placed before 3PM delivered
+                same day before 7PM
+              </li>
+              <li>
+                <strong>Other Cities & States:</strong> Orders before 12PM
+                dispatched same day
+              </li>
+            </ul>
+          </li>
+          <li>Free delivery for orders above <strong>₹599.</strong></li>
+          <li>
+            <strong>₹50–₹150</strong> delivery charge depending on location.
+          </li>
+          <li>COD in Nellore with ₹50 token (non-refundable if cancelled).</li>
+          <li>Tracking details sent via WhatsApp.</li>
+          <li>No return policy in Nellore.</li>
+          <li>
+            <strong>Returns (Other Cities & States):</strong>
+            <ul>
+              <li>Returns only if product is damaged.</li>
+              <li>Processed within 7 days.</li>
+              <li>Unboxing video required (no cuts or pauses).</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Payment:</strong> Paytm, Google Pay, PhonePe, COD (Nellore)
+          </li>
+          <li>
+            Once payment done need to share sreenshot of detailed transation id
+            to verify the payment and once its verified your order will be
+            processed.
+          </li>
+        </ul>
+
+        <button id="closeShipping" class="close-btn">Close</button>
+      </div>
+    </div>
+
+    <!-- ✅ Product Image Slider Popup -->
+    <div class="image-popup" id="imagePopup">
+      <div class="image-popup-content">
+        <span class="close-popup" id="closeImagePopup">&times;</span>
+
+        <img id="popupImage" src="" alt="Product Image" />
+
+        <!-- Navigation Arrows -->
+        <span class="arrow prev" id="prevImage">&#10094;</span>
+        <span class="arrow next" id="nextImage">&#10095;</span>
+      </div>
+    </div>
+
+    <!-- ✅ Bottom Bar (Mobile) -->
+    <div class="mobile-bottom-bar">
+      <input id="mobileSearch" type="text" placeholder="Search..." />
+
+      <select id="mobileSort">
+        <option value="">Sort by Price</option>
+        <option value="low">Low → High</option>
+        <option value="high">High → Low</option>
+      </select>
+    </div>
+
+    <!-- ✅ External JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

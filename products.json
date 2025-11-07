@@ -1,0 +1,252 @@
+{
+  "products": [
+    {
+      "name": "EMS Massager",
+      "price": 249,
+      "quantity": 3,
+      "image": "images/EMS-Massager.jpg",
+      "sliderImages": [
+        "images/EMS-Massager1.jpg",
+        "images/EMS-Massager2.jpg",
+        "images/EMS-Massager3.jpg"
+      ]
+    },
+    {
+      "name": "Jewellery Box",
+      "price": 189,
+      "quantity": 3,
+      "image": "images/Jewellery-Box.jpg",
+      "sliderImages": [
+        "images/Jewellery-Box1.jpg",
+        "images/Jewellery-Box2.jpg",
+        "images/Jewellery-Box3.jpg"
+      ]
+    },
+    {
+      "name": "Keychain Lighter",
+      "price": 160,
+      "quantity": 3,
+      "image": "images/Keychain-Lighter.jpg",
+      "sliderImages": [
+        "images/Keychain-Lighter1.jpg",
+        "images/Keychain-Lighter2.jpg",
+        "images/Keychain-Lighter3.jpg"
+      ]
+    },
+    {
+      "name": "Magic Towel",
+      "price": 75,
+      "quantity": 3,
+      "image": "images/Magic-Towel.jpg",
+      "sliderImages": [
+        "images/Magic-Towel1.jpg",
+        "images/Magic-Towel2.jpg",
+        "images/Magic-Towel3.jpg"
+      ]
+    },
+    {
+      "name": "Lunch Bag",
+      "price": 120,
+      "quantity": 5,
+      "image": "images/Lunch-Bag.jpg",
+      "sliderImages": [
+        "images/Lunch-Bag1.jpg",
+        "images/Lunch-Bag2.jpg",
+        "images/Lunch-Bag3.jpg"
+      ]
+    },
+    {
+      "name": "Bathroom Mat",
+      "price": 140,
+      "quantity": 5,
+      "image": "images/Bathroom-Mat.jpg",
+      "sliderImages": [
+        "images/Bathroom-Mat1.jpg",
+        "images/Bathroom-Mat2.jpg",
+        "images/Bathroom-Mat3.jpg"
+      ]
+    },
+    {
+      "name": "3 in 1 Floor Scrub Brush",
+      "price": 140,
+      "quantity": 3,
+      "image": "images/3-in-1-Floor-Scrub-Brush.jpg",
+      "sliderImages": [
+        "images/3-in-1-Floor-Scrub-Brush1.jpg",
+        "images/3-in-1-Floor-Scrub-Brush2.jpg",
+        "images/3-in-1-Floor-Scrub-Brush3.jpg"
+      ]
+    },
+    {
+      "name": "Silicon Wiper",
+      "price": 160,
+      "quantity": 3,
+      "image": "images/Silicon-Wiper.jpg",
+      "sliderImages": [
+        "images/Silicon-Wiper1.jpg",
+        "images/Silicon-Wiper2.jpg",
+        "images/Silicon-Wiper3.jpg"
+      ]
+    },
+    {
+      "name": "Mop",
+      "price": 180,
+      "quantity": 3,
+      "image": "images/Mop.jpg",
+      "sliderImages": ["images/Mop1.jpg", "images/Mop2.jpg", "images/Mop3.jpg"]
+    },
+    {
+      "name": "Big Sticker Mirror",
+      "price": 160,
+      "quantity": 3,
+      "image": "images/Big-Sticker-Mirror.jpg",
+      "sliderImages": [
+        "images/Big-Sticker-Mirror1.jpg",
+        "images/Big-Sticker-Mirror2.jpg",
+        "images/Big-Sticker-Mirror3.jpg"
+      ]
+    },
+    {
+      "name": "Card Reading Game",
+      "price": 350,
+      "quantity": 3,
+      "image": "images/Card-Reading-Game.jpg",
+      "sliderImages": [
+        "images/Card-Reading-Game1.jpg",
+        "images/Card-Reading-Game2.jpg",
+        "images/Card-Reading-Game3.jpg"
+      ]
+    },
+    {
+      "name": "Army Torch",
+      "price": 140,
+      "quantity": 3,
+      "image": "images/Army-Torch.jpg",
+      "sliderImages": [
+        "images/Army-Torch1.jpg",
+        "images/Army-Torch2.jpg",
+        "images/Army-Torch3.jpg"
+      ]
+    },
+    {
+      "name": "10 Inch Ring Light",
+      "price": 220,
+      "quantity": 3,
+      "image": "images/10-Inch-Ring-Light.jpg",
+      "sliderImages": [
+        "images/10-Inch-Ring-Light1.jpg",
+        "images/10-Inch-Ring-Light2.jpg",
+        "images/10-Inch-Ring-Light3.jpg"
+      ]
+    },
+    {
+      "name": "DIY Lamp",
+      "price": 350,
+      "quantity": 3,
+      "image": "images/DIY-Lamp.jpg",
+      "sliderImages": [
+        "images/DIY-Lamp1.jpg",
+        "images/DIY-Lamp2.jpg",
+        "images/DIY-Lamp3.jpg"
+      ]
+    },
+    {
+      "name": "Crystal Ball (God Mix)",
+      "price": 220,
+      "quantity": 3,
+      "image": "images/Crystal-Ball-God-Mix.jpg",
+      "sliderImages": [
+        "images/Crystal-Ball-God-Mix1.jpg",
+        "images/Crystal-Ball-God-Mix2.jpg",
+        "images/Crystal-Ball-God-Mix3.jpg"
+      ]
+    },
+    {
+      "name": "Geometry",
+      "price": 170,
+      "quantity": 3,
+      "image": "images/Geometry.jpg",
+      "sliderImages": [
+        "images/Geometry1.jpg",
+        "images/Geometry2.jpg",
+        "images/Geometry3.jpg"
+      ]
+    },
+    {
+      "name": "Ear Bottle",
+      "price": 150,
+      "quantity": 3,
+      "image": "images/Ear-Bottle.jpg",
+      "sliderImages": [
+        "images/Ear-Bottle1.jpg",
+        "images/Ear-Bottle2.jpg",
+        "images/Ear-Bottle3.jpg"
+      ]
+    },
+    {
+      "name": "Transparent 3 in 1 Bottle",
+      "price": 230,
+      "quantity": 3,
+      "image": "images/Transparent-3-in-1-Bottle.jpg",
+      "sliderImages": [
+        "images/Transparent-3-in-1-Bottle1.jpg",
+        "images/Transparent-3-in-1-Bottle2.jpg"
+      ]
+    },
+    {
+      "name": "7ft Tripod",
+      "price": 220,
+      "quantity": 3,
+      "image": "images/7ft-Tripod.jpg",
+      "sliderImages": [
+        "images/7ft-Tripod1.jpg",
+        "images/7ft-Tripod2.jpg",
+        "images/7ft-Tripod3.jpg"
+      ]
+    },
+    {
+      "name": "Tripod 3110",
+      "price": 300,
+      "quantity": 3,
+      "image": "images/Tripod-3110.jpg",
+      "sliderImages": [
+        "images/Tripod-31101.jpg",
+        "images/Tripod-31102.jpg",
+        "images/Tripod-31103.jpg"
+      ]
+    },
+    {
+      "name": "Rain Coat",
+      "price": 110,
+      "quantity": 3,
+      "image": "images/Rain-Coat.jpg",
+      "sliderImages": [
+        "images/Rain-Coat1.jpg",
+        "images/Rain-Coat2.jpg",
+        "images/Rain-Coat3.jpg"
+      ]
+    },
+    {
+      "name": "Rain Card",
+      "price": 30,
+      "quantity": 10,
+      "image": "images/Rain-Card.jpg",
+      "sliderImages": [
+        "images/Rain-Card1.jpg",
+        "images/Rain-Card2.jpg",
+        "images/Rain-Card3.jpg"
+      ]
+    },
+    {
+      "name": "K8 Mic",
+      "price": 220,
+      "quantity": 3,
+      "image": "images/K8-Mic.jpg",
+      "sliderImages": [
+        "images/K8-Mic1.jpg",
+        "images/K8-Mic2.jpg",
+        "images/K8-Mic3.jpg"
+      ]
+    }
+  ]
+}

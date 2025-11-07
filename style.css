@@ -1,0 +1,459 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* ✅ Global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  padding-top: 126px; /* space for sticky header */
+}
+
+/* ✅ Sticky Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 102px;
+}
+
+/* ✅ Search Bar */
+.search-box {
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* ✅ Product Grid (Desktop: 4 items) */
+.product-grid {
+  display: grid;
+  gap: 15px;
+  padding: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ✅ Product Card */
+.product-card {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+}
+/* ✅ Grey out out-of-stock products */
+.product-card.out-of-stock {
+  opacity: 0.5;
+  pointer-events: none; /* disables all clicks */
+}
+
+/* ✅ Out of Stock text */
+.out-stock-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.qty {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ✅ Buy Button */
+.buy-btn {
+  display: block;
+  margin-top: auto;
+  padding: 10px;
+  background: #25d366;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.buy-btn:hover {
+  background: #1ebe57;
+}
+
+/* ✅ Sort Dropdown (Desktop) */
+.sort-box {
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.sort-box select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* ✅ Floating Support Button */
+.floating-support {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Support Menu */
+.support-menu {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.support-item {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+}
+
+.support-item:hover {
+  background: #f0f0f0;
+}
+
+/* ✅ Mobile Sticky Search + Sort Bar (Bottom) */
+.mobile-bottom-bar {
+  display: none;
+}
+
+/* ✅ Sort + Title Row (Desktop) */
+.sort-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+/* ✅ Title font size desktop */
+.title {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* ✅ Sort dropdown style */
+.sort-box select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* ✅ Shipping Popup Background */
+.shipping-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* prevents sticking to edges */
+}
+
+/* ✅ Popup Box – scrollable for small screens */
+.shipping-content {
+  background: white;
+  width: 90%;
+  max-width: 350px;
+  max-height: 90vh; /* ✅ Popup never exceeds screen height */
+  overflow-y: auto; /* ✅ Internal scroll appears */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: popupFade 0.3s ease;
+}
+
+/* Scrollbar styling (optional) */
+.shipping-content::-webkit-scrollbar {
+  width: 6px;
+}
+.shipping-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shipping-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.shipping-content ul {
+  margin-left: 18px;
+  margin-bottom: 15px;
+}
+
+.shipping-content li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* ✅ Close Button */
+.close-btn {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-btn:hover {
+  background: #000;
+}
+
+/* ✅ Eye Icon Hover */
+.eye-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.product-card:hover .eye-icon {
+  opacity: 1;
+}
+
+/* ✅ Slider Popup */
+.image-popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+
+.image-popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.image-popup-content img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Close button */
+.close-popup {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: white;
+  background: red;
+  font-size: 20px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 30px;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow.prev {
+  left: -40px;
+}
+.arrow.next {
+  right: -40px;
+}
+
+@media (max-width: 480px) {
+  .arrow.prev {
+    left: -20px;
+  }
+  .arrow.next {
+    right: -20px;
+  }
+}
+
+/* ✅ ✅ SINGLE MOBILE BREAKPOINT */
+@media (max-width: 993px) {
+  /* ✅ Adjust header */
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  body {
+    padding-top: 70px;
+    padding-bottom: 70px; /* space for bottom sticky bar */
+  }
+
+  /* ✅ Mobile: 2 items per row */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ✅ Hide header search + sort on mobile */
+  .search-box,
+  .sort-box {
+    display: none;
+  }
+
+  /* ✅ Show bottom sticky bar */
+  .mobile-bottom-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 8px;
+    gap: 8px;
+    border-top: 1px solid #ddd;
+    z-index: 2000;
+  }
+
+  .mobile-bottom-bar input,
+  .mobile-bottom-bar select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  /* ✅ Floating Support Button smaller on mobile */
+  .floating-support {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    bottom: 70px;
+  }
+  .support-menu {
+    bottom: 128px;
+  }
+  .product-card h3 {
+    font-size: 14px;
+  }
+  .product-card .price {
+    margin-top: 0px;
+    font-size: 14px;
+  }
+  .product-card .qty {
+    margin-top: 0px;
+  }
+  .buy-btn {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .sort-title-row {
+    text-align: center;
+  }
+
+  /* Title fontsize on mobile (when visible anywhere else) */
+  .title {
+    font-size: 14px;
+    margin-top: 15px;
+    width: 100%;
+  }
+}

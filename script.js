@@ -237,47 +237,59 @@ async function createShareImage(product) {
 
 async function shareProduct(product) {
   const productLink = window.location.href;
-
-  // ✅ Caption visible on all platforms
   const caption = `${product.name}\nPrice: ₹${product.price}\n${productLink}`;
 
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // ✅ ANDROID → Full share (image + caption + link)
-  if (!isIOS && isMobile && navigator.canShare) {
+  // ✅ ANDROID — Try IMAGE + TEXT + LINK
+  if (!isIOS && isMobile) {
     try {
       const file = await createShareImage(product);
 
-      const shareData = {
+      // ✅ First test full capability: image + text + url
+      const fullShare = {
         files: [file],
-        text: caption,
+        text: `${product.name}\nPrice: ₹${product.price}`,
+        url: productLink, // ✅ link included
         title: product.name,
       };
 
-      if (navigator.canShare(shareData)) {
-        await navigator.share(shareData);
+      if (navigator.canShare && navigator.canShare(fullShare)) {
+        await navigator.share(fullShare);
+        return;
+      }
+
+      // ✅ If full share not supported → try image + text (no url)
+      const imgTextShare = {
+        files: [file],
+        text: caption, // includes link inside text
+        title: product.name,
+      };
+
+      if (navigator.canShare && navigator.canShare(imgTextShare)) {
+        await navigator.share(imgTextShare);
         return;
       }
     } catch (err) {
-      console.log("Android image share failed → fallback.", err);
+      console.log("Android full share failed → using fallback", err);
     }
   }
 
-  // ✅ iPHONE or unsupported APP → share TEXT only
+  // ✅ IPHONE / Other devices — text + url only
   if (navigator.share) {
     try {
       await navigator.share({
         title: product.name,
         text: caption,
+        url: productLink,
       });
       return;
-    } catch (err) {
-      console.log("Native share failed → fallback.");
+    } catch (e) {
+      console.log("iOS native share failed → fallback");
     }
   }
 
-  // ✅ DESKTOP or old browsers → open WhatsApp with caption + link
-  const encoded = encodeURIComponent(caption);
-  window.open(`https://wa.me/?text=${encoded}`, "_blank");
+  // ✅ DESKTOP fallback (WhatsApp Web)
+  window.open(`https://wa.me/?text=${encodeURIComponent(caption)}`, "_blank");
 }

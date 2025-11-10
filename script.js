@@ -37,7 +37,13 @@ function renderProducts(list) {
                 )})'>👁️</div>`
               : ""
           }
+
+          <div class="share-icon" onclick='shareProduct(${JSON.stringify(
+            p
+          )})'><img src="images/share-icon.png" /></div>
         </div>
+        
+
 
         <h3>${p.name}</h3>
 
@@ -176,3 +182,37 @@ document.getElementById("imagePopup").addEventListener("click", (e) => {
     document.getElementById("imagePopup").style.display = "none";
   }
 });
+
+function shareProduct(product) {
+  const shareData = {
+    title: product.name,
+    text: `Check this product:\n\n${product.name}\nPrice: ₹${product.price}\n\n`,
+    url: window.location.href,
+  };
+
+  // ✅ Try to include image if supported
+  if (navigator.canShare && product.image) {
+    fetch(product.image)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const file = new File([blob], `${product.name}.jpg`, {
+          type: blob.type,
+        });
+
+        if (navigator.canShare({ files: [file] })) {
+          shareData.files = [file];
+        }
+
+        navigator.share(shareData).catch(() => {});
+      });
+  } else {
+    // ✅ Fallback: share text only
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    } else {
+      // ✅ Desktop fallback → WhatsApp share link
+      const msg = `Check this product:\n${product.name}\nPrice: ₹${product.price}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+  }
+}

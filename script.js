@@ -184,13 +184,15 @@ document.getElementById("imagePopup").addEventListener("click", (e) => {
 });
 
 function shareProduct(product) {
+  const message = `Check this product:\n${product.name}\nPrice: ₹${product.price}`;
+
   const shareData = {
     title: product.name,
-    text: `Check this product:\n\n${product.name}\nPrice: ₹${product.price}\n\n`,
+    text: message, // ✅ Ensure text always included
     url: window.location.href,
   };
 
-  // ✅ Try to include image if supported
+  // ✅ Try image sharing if supported
   if (navigator.canShare && product.image) {
     fetch(product.image)
       .then((res) => res.blob())
@@ -201,18 +203,25 @@ function shareProduct(product) {
 
         if (navigator.canShare({ files: [file] })) {
           shareData.files = [file];
+
+          // ✅ Must reassign text AFTER files (browser bug fix)
+          shareData.text = message + "\n\n" + window.location.href;
         }
 
         navigator.share(shareData).catch(() => {});
       });
   } else {
-    // ✅ Fallback: share text only
+    // ✅ Normal mobile share
     if (navigator.share) {
       navigator.share(shareData).catch(() => {});
     } else {
-      // ✅ Desktop fallback → WhatsApp share link
-      const msg = `Check this product:\n${product.name}\nPrice: ₹${product.price}`;
-      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+      // ✅ Desktop fallback
+      window.open(
+        `https://wa.me/?text=${encodeURIComponent(
+          message + "\n" + window.location.href
+        )}`,
+        "_blank"
+      );
     }
   }
 }

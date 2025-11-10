@@ -205,7 +205,7 @@ async function createShareImage(product) {
 
     img.onload = () => {
       // Draw product image top part
-      const imgHeight = 1000;
+      const imgHeight = 900;
       ctx.drawImage(img, 0, 0, width, imgHeight);
 
       // Text styles
@@ -242,32 +242,39 @@ async function createShareImage(product) {
 }
 
 async function shareProduct(product) {
-  const productLink = window.location.href; // ✅ Your catalog link
-  const caption =
-    `${product.name}\nPrice: ₹${product.price}\nBuy Now @ JaasWorld\n` +
-    productLink;
+  const productLink = window.location.href;
 
+  const caption = `${product.name}\nPrice: ₹${product.price}\n` + productLink;
+
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isDesktop = !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // ✅ Desktop or iPhone → WhatsApp link only (image sharing not supported)
+  if (isIOS || isDesktop) {
+    const waMsg = encodeURIComponent(caption);
+    window.open(`https://wa.me/?text=${waMsg}`, "_blank");
+    return;
+  }
+
+  // ✅ Android → Try image + caption share
   try {
-    // ✅ Create poster-style merged image (no link inside canvas)
     const file = await createShareImage(product);
 
     const shareData = {
       files: [file],
       title: product.name,
-      text: caption, // ✅ Link OUTSIDE image in caption
+      text: caption,
     };
 
     if (navigator.canShare && navigator.canShare(shareData)) {
-      await navigator.share(shareData);
+      await navigator.share(shareData); // ✅ Android shows image + caption + link
       return;
     }
   } catch (err) {
-    console.log("Share with image not supported, fallback...");
+    console.log("Image share failed, using WhatsApp fallback.");
   }
 
-  // ✅ WhatsApp fallback (text + link always works)
-  const whatsappMsg = `${product.name}\nPrice: ₹${product.price}\n${productLink}`;
-  const encoded = encodeURIComponent(whatsappMsg);
-
-  window.open(`https://wa.me/?text=${encoded}`, "_blank");
+  // ✅ Android fallback → WhatsApp link
+  const fallbackMsg = encodeURIComponent(caption);
+  window.open(`https://wa.me/?text=${fallbackMsg}`, "_blank");
 }

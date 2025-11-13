@@ -31,10 +31,10 @@ function renderProducts(list) {
     const encodedName = encodeURIComponent(p.name);
     const isOut = p.quantity === 0;
     const hasSlider = p.sliderImages && p.sliderImages.length > 0;
+    const hasTag = p.tag && p.tag.trim() !== "";
 
     const card = `
       <div class="product-card ${isOut ? "out-of-stock" : ""}">
-        
         <div class="image-wrapper" style="position:relative;">
           <img src="${p.image}" alt="${p.name}" class="product-image" />
 
@@ -46,12 +46,12 @@ function renderProducts(list) {
               : ""
           }
 
+          ${hasTag ? `<div class="tag-badge">${p.tag}</div>` : ""}
+
           <div class="share-icon" onclick='shareProduct(${JSON.stringify(
             p
           )})'><img src="images/share-icon.png" /></div>
         </div>
-        
-
 
         <h3>${p.name}</h3>
 

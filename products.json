@@ -9,7 +9,8 @@
         "images/EMS-Massager1.jpg",
         "images/EMS-Massager2.jpg",
         "images/EMS-Massager3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Jewellery Box",
@@ -20,29 +21,32 @@
         "images/Jewellery-Box1.jpg",
         "images/Jewellery-Box2.jpg",
         "images/Jewellery-Box3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Keychain Lighter",
       "price": 160,
-      "quantity": 2,
+      "quantity": 5,
       "image": "images/Keychain-Lighter.jpg",
       "sliderImages": [
         "images/Keychain-Lighter1.jpg",
         "images/Keychain-Lighter2.jpg",
         "images/Keychain-Lighter3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Magic Bath Towel",
       "price": 40,
-      "quantity": 1,
+      "quantity": 4,
       "image": "images/Magic-Towel.jpg",
       "sliderImages": [
         "images/Magic-Towel1.jpg",
         "images/Magic-Towel2.jpg",
         "images/Magic-Towel3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Lunch Bag",
@@ -53,7 +57,8 @@
         "images/Lunch-Bag1.jpg",
         "images/Lunch-Bag2.jpg",
         "images/Lunch-Bag3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Bathroom Mat",
@@ -64,36 +69,40 @@
         "images/Bathroom-Mat1.jpg",
         "images/Bathroom-Mat2.jpg",
         "images/Bathroom-Mat3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "3 in 1 Floor Scrub Brush",
       "price": 140,
-      "quantity": 0,
+      "quantity": 4,
       "image": "images/3-in-1-Floor-Scrub-Brush.jpg",
       "sliderImages": [
         "images/3-in-1-Floor-Scrub-Brush1.jpg",
         "images/3-in-1-Floor-Scrub-Brush2.jpg",
         "images/3-in-1-Floor-Scrub-Brush3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Silicon Wiper",
       "price": 160,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Silicon-Wiper.jpg",
       "sliderImages": [
         "images/Silicon-Wiper1.jpg",
         "images/Silicon-Wiper2.jpg",
         "images/Silicon-Wiper3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Mop",
       "price": 180,
-      "quantity": 2,
+      "quantity": 5,
       "image": "images/Mop.jpg",
-      "sliderImages": ["images/Mop1.jpg", "images/Mop2.jpg", "images/Mop3.jpg"]
+      "sliderImages": ["images/Mop1.jpg", "images/Mop2.jpg", "images/Mop3.jpg"],
+      "tag": ""
     },
     {
       "name": "Big Sticker Mirror",
@@ -104,7 +113,8 @@
         "images/Big-Sticker-Mirror1.jpg",
         "images/Big-Sticker-Mirror2.jpg",
         "images/Big-Sticker-Mirror3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Card Reading Game",
@@ -115,7 +125,8 @@
         "images/Card-Reading-Game1.jpg",
         "images/Card-Reading-Game2.jpg",
         "images/Card-Reading-Game3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Army Torch",
@@ -126,7 +137,8 @@
         "images/Army-Torch1.jpg",
         "images/Army-Torch2.jpg",
         "images/Army-Torch3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "10 Inch Ring Light",
@@ -137,7 +149,8 @@
         "images/10-Inch-Ring-Light1.jpg",
         "images/10-Inch-Ring-Light2.jpg",
         "images/10-Inch-Ring-Light3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "DIY Lamp",
@@ -148,18 +161,20 @@
         "images/DIY-Lamp1.jpg",
         "images/DIY-Lamp2.jpg",
         "images/DIY-Lamp3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
-      "name": "Crystal Ball (Only Lakshmi Devi Available)",
+      "name": "Crystal Ball (God Mix)",
       "price": 160,
-      "quantity": 2,
+      "quantity": 7,
       "image": "images/Crystal-Ball-God-Mix.jpg",
       "sliderImages": [
         "images/Crystal-Ball-God-Mix1.jpg",
         "images/Crystal-Ball-God-Mix2.jpg",
         "images/Crystal-Ball-God-Mix3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Geometry",
@@ -170,7 +185,8 @@
         "images/Geometry1.jpg",
         "images/Geometry2.jpg",
         "images/Geometry3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Ear Bottle",
@@ -181,7 +197,8 @@
         "images/Ear-Bottle1.jpg",
         "images/Ear-Bottle2.jpg",
         "images/Ear-Bottle3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Transparent 3 in 1 Bottle",
@@ -191,7 +208,8 @@
       "sliderImages": [
         "images/Transparent-3-in-1-Bottle1.jpg",
         "images/Transparent-3-in-1-Bottle2.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "7ft Tripod",
@@ -202,7 +220,8 @@
         "images/7ft-Tripod1.jpg",
         "images/7ft-Tripod2.jpg",
         "images/7ft-Tripod3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Tripod 3110",
@@ -213,7 +232,8 @@
         "images/Tripod-31101.jpg",
         "images/Tripod-31102.jpg",
         "images/Tripod-31103.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Rain Coat",
@@ -224,7 +244,8 @@
         "images/Rain-Coat1.jpg",
         "images/Rain-Coat2.jpg",
         "images/Rain-Coat3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "Rain Card",
@@ -235,7 +256,8 @@
         "images/Rain-Card1.jpg",
         "images/Rain-Card2.jpg",
         "images/Rain-Card3.jpg"
-      ]
+      ],
+      "tag": ""
     },
     {
       "name": "K8 Mic",
@@ -246,7 +268,112 @@
         "images/K8-Mic1.jpg",
         "images/K8-Mic2.jpg",
         "images/K8-Mic3.jpg"
-      ]
+      ],
+      "tag": ""
+    },
+    {
+      "name": "Sand Mirror",
+      "price": 270,
+      "quantity": 4,
+      "image": "images/Sand-Mirror.jpg",
+      "sliderImages": [
+        "images/Sand-Mirror1.jpg",
+        "images/Sand-Mirror2.jpg",
+        "images/Sand-Mirror3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "Nebulizer",
+      "price": 280,
+      "quantity": 3,
+      "image": "images/Nebulizer.jpg",
+      "sliderImages": [
+        "images/Nebulizer1.jpg",
+        "images/Nebulizer2.jpg",
+        "images/Nebulizer3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "Foldable Luggage Travel Bags",
+      "price": 320,
+      "quantity": 3,
+      "image": "images/Foldable-Luggage-Travel-Bags.jpg",
+      "sliderImages": [
+        "images/Foldable-Luggage-Travel-Bags1.jpg",
+        "images/Foldable-Luggage-Travel-Bags2.jpg",
+        "images/Foldable-Luggage-Travel-Bags3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "12 Clip Rope",
+      "price": 110,
+      "quantity": 3,
+      "image": "images/12-Clip-Rope.jpg",
+      "sliderImages": [
+        "images/12-Clip-Rope1.jpg",
+        "images/12-Clip-Rope2.jpg",
+        "images/12-Clip-Rope3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "Helicopter Car Aroma",
+      "price": 350,
+      "quantity": 3,
+      "image": "images/Helicopter-Car-Aroma.jpg",
+      "sliderImages": [
+        "images/Helicopter-Car-Aroma1.jpg",
+        "images/Helicopter-Car-Aroma2.jpg",
+        "images/Helicopter-Car-Aroma3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "K12 Speaker",
+      "price": 350,
+      "quantity": 3,
+      "image": "images/K12-Speaker.jpg",
+      "sliderImages": [
+        "images/K12-Speaker1.jpg",
+        "images/K12-Speaker2.jpg",
+        "images/K12-Speaker3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "Animal (1126)",
+      "price": 230,
+      "quantity": 3,
+      "image": "images/Animal-(1126).jpg",
+      "sliderImages": ["images/Animal-(1126)1.jpg"],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "Concept Racing Car",
+      "price": 350,
+      "quantity": 3,
+      "image": "images/Concept-Racing-Car.jpg",
+      "sliderImages": [
+        "images/Concept-Racing-Car1.jpg",
+        "images/Concept-Racing-Car2.jpg",
+        "images/Concept-Racing-Car3.jpg"
+      ],
+      "tag": "Pre-Order Available"
+    },
+    {
+      "name": "Ultra Pods",
+      "price": 105,
+      "quantity": 3,
+      "image": "images/Ultra-Pods.jpg",
+      "sliderImages": [
+        "images/Ultra-Pods1.jpg",
+        "images/Ultra-Pods2.jpg",
+        "images/Ultra-Pods3.jpg"
+      ],
+      "tag": "Pre-Order Available"
     }
   ]
 }

@@ -10,6 +10,14 @@ fetch("products.json")
   .then((res) => res.json())
   .then((data) => {
     allProducts = data.products;
+
+    // ✅ Always push out-of-stock items to the end on initial load
+    allProducts.sort((a, b) => {
+      if (a.quantity === 0 && b.quantity > 0) return 1;
+      if (a.quantity > 0 && b.quantity === 0) return -1;
+      return 0;
+    });
+
     filteredProducts = [...allProducts];
     renderProducts(filteredProducts);
   });
@@ -72,16 +80,26 @@ function applyFilters() {
   const searchText = document.getElementById("searchInput").value.toLowerCase();
   const sortOption = document.getElementById("sortSelect").value;
 
+  // ✅ 1️⃣ Filter by search text
   filteredProducts = allProducts.filter((p) =>
     p.name.toLowerCase().includes(searchText)
   );
 
+  // ✅ 2️⃣ Sort by price if selected
   if (sortOption === "low") {
     filteredProducts.sort((a, b) => a.price - b.price);
   } else if (sortOption === "high") {
     filteredProducts.sort((a, b) => b.price - a.price);
   }
 
+  // ✅ 3️⃣ Always move out-of-stock items to the end
+  filteredProducts.sort((a, b) => {
+    if (a.quantity === 0 && b.quantity > 0) return 1; // a goes after
+    if (a.quantity > 0 && b.quantity === 0) return -1; // a goes before
+    return 0;
+  });
+
+  // ✅ 4️⃣ Render after sorting
   renderProducts(filteredProducts);
 }
 

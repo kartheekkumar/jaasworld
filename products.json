@@ -25,7 +25,7 @@
     {
       "name": "Keychain Lighter",
       "price": 160,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Keychain-Lighter.jpg",
       "sliderImages": [
         "images/Keychain-Lighter1.jpg",
@@ -36,7 +36,7 @@
     {
       "name": "Magic Bath Towel",
       "price": 40,
-      "quantity": 3,
+      "quantity": 1,
       "image": "images/Magic-Towel.jpg",
       "sliderImages": [
         "images/Magic-Towel1.jpg",
@@ -58,7 +58,7 @@
     {
       "name": "Bathroom Mat",
       "price": 100,
-      "quantity": 5,
+      "quantity": 4,
       "image": "images/Bathroom-Mat.jpg",
       "sliderImages": [
         "images/Bathroom-Mat1.jpg",
@@ -69,7 +69,7 @@
     {
       "name": "3 in 1 Floor Scrub Brush",
       "price": 140,
-      "quantity": 3,
+      "quantity": 0,
       "image": "images/3-in-1-Floor-Scrub-Brush.jpg",
       "sliderImages": [
         "images/3-in-1-Floor-Scrub-Brush1.jpg",
@@ -91,14 +91,14 @@
     {
       "name": "Mop",
       "price": 180,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Mop.jpg",
       "sliderImages": ["images/Mop1.jpg", "images/Mop2.jpg", "images/Mop3.jpg"]
     },
     {
       "name": "Big Sticker Mirror",
       "price": 160,
-      "quantity": 3,
+      "quantity": 0,
       "image": "images/Big-Sticker-Mirror.jpg",
       "sliderImages": [
         "images/Big-Sticker-Mirror1.jpg",
@@ -151,9 +151,9 @@
       ]
     },
     {
-      "name": "Crystal Ball (God Mix)",
+      "name": "Crystal Ball (Only Lakshmi Devi Available)",
       "price": 160,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Crystal-Ball-God-Mix.jpg",
       "sliderImages": [
         "images/Crystal-Ball-God-Mix1.jpg",

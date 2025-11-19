@@ -143,7 +143,7 @@
     {
       "name": "10 Inch Ring Light",
       "price": 220,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/10-Inch-Ring-Light.jpg",
       "sliderImages": [
         "images/10-Inch-Ring-Light1.jpg",
@@ -214,7 +214,7 @@
     {
       "name": "7ft Tripod",
       "price": 220,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/7ft-Tripod.jpg",
       "sliderImages": [
         "images/7ft-Tripod1.jpg",
@@ -226,7 +226,7 @@
     {
       "name": "Tripod 3110",
       "price": 220,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Tripod-3110.jpg",
       "sliderImages": [
         "images/Tripod-31101.jpg",
@@ -262,7 +262,7 @@
     {
       "name": "K8 Mic",
       "price": 220,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/K8-Mic.jpg",
       "sliderImages": [
         "images/K8-Mic1.jpg",

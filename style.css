@@ -507,4 +507,7 @@ body {
     margin-top: 15px;
     width: 100%;
   }
+  .tag-badge {
+    font-size: 10px;
+  }
 }

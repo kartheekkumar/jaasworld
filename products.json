@@ -174,7 +174,7 @@
         "images/Crystal-Ball-God-Mix2.jpg",
         "images/Crystal-Ball-God-Mix3.jpg"
       ],
-      "tag": ""
+      "tag": "Lord Shiva, Ganesha, Lakshmi Devi Available"
     },
     {
       "name": "Geometry",
@@ -238,7 +238,7 @@
     {
       "name": "Rain Coat",
       "price": 99,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Rain-Coat.jpg",
       "sliderImages": [
         "images/Rain-Coat1.jpg",
@@ -281,7 +281,7 @@
         "images/Sand-Mirror2.jpg",
         "images/Sand-Mirror3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     },
     {
       "name": "Nebulizer",
@@ -293,7 +293,7 @@
         "images/Nebulizer2.jpg",
         "images/Nebulizer3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     },
     {
       "name": "Foldable Luggage Travel Bags",
@@ -305,7 +305,7 @@
         "images/Foldable-Luggage-Travel-Bags2.jpg",
         "images/Foldable-Luggage-Travel-Bags3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     },
     {
       "name": "12 Clip Rope",
@@ -317,7 +317,7 @@
         "images/12-Clip-Rope2.jpg",
         "images/12-Clip-Rope3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     },
     {
       "name": "Helicopter Car Aroma",
@@ -329,7 +329,7 @@
         "images/Helicopter-Car-Aroma2.jpg",
         "images/Helicopter-Car-Aroma3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     },
     {
       "name": "K12 Speaker",
@@ -341,7 +341,7 @@
         "images/K12-Speaker2.jpg",
         "images/K12-Speaker3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": "Only Pink & Sand Color Available"
     },
     {
       "name": "Animal (1126)",
@@ -349,7 +349,7 @@
       "quantity": 3,
       "image": "images/Animal-(1126).jpg",
       "sliderImages": ["images/Animal-(1126)1.jpg"],
-      "tag": "Pre-Order Available"
+      "tag": "Only Black & White colors available"
     },
     {
       "name": "Concept Racing Car",
@@ -361,7 +361,7 @@
         "images/Concept-Racing-Car2.jpg",
         "images/Concept-Racing-Car3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     },
     {
       "name": "Ultra Pods",
@@ -373,7 +373,7 @@
         "images/Ultra-Pods2.jpg",
         "images/Ultra-Pods3.jpg"
       ],
-      "tag": "Pre-Order Available"
+      "tag": ""
     }
   ]
 }

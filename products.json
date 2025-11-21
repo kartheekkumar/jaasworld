@@ -15,7 +15,7 @@
     {
       "name": "Jewellery Box",
       "price": 140,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Jewellery-Box.jpg",
       "sliderImages": [
         "images/Jewellery-Box1.jpg",
@@ -51,7 +51,7 @@
     {
       "name": "Lunch Bag",
       "price": 100,
-      "quantity": 5,
+      "quantity": 3,
       "image": "images/Lunch-Bag.jpg",
       "sliderImages": [
         "images/Lunch-Bag1.jpg",
@@ -131,7 +131,7 @@
     {
       "name": "Army Torch",
       "price": 140,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Army-Torch.jpg",
       "sliderImages": [
         "images/Army-Torch1.jpg",
@@ -298,7 +298,7 @@
     {
       "name": "Foldable Luggage Travel Bags",
       "price": 320,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Foldable-Luggage-Travel-Bags.jpg",
       "sliderImages": [
         "images/Foldable-Luggage-Travel-Bags1.jpg",

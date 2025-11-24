@@ -27,7 +27,7 @@
     {
       "name": "Keychain Lighter",
       "price": 160,
-      "quantity": 5,
+      "quantity": 4,
       "image": "images/Keychain-Lighter.jpg",
       "sliderImages": [
         "images/Keychain-Lighter1.jpg",
@@ -51,7 +51,7 @@
     {
       "name": "Lunch Bag",
       "price": 100,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Lunch-Bag.jpg",
       "sliderImages": [
         "images/Lunch-Bag1.jpg",
@@ -75,7 +75,7 @@
     {
       "name": "3 in 1 Floor Scrub Brush",
       "price": 140,
-      "quantity": 4,
+      "quantity": 3,
       "image": "images/3-in-1-Floor-Scrub-Brush.jpg",
       "sliderImages": [
         "images/3-in-1-Floor-Scrub-Brush1.jpg",
@@ -167,14 +167,14 @@
     {
       "name": "Crystal Ball (God Mix)",
       "price": 160,
-      "quantity": 7,
+      "quantity": 4,
       "image": "images/Crystal-Ball-God-Mix.jpg",
       "sliderImages": [
         "images/Crystal-Ball-God-Mix1.jpg",
         "images/Crystal-Ball-God-Mix2.jpg",
         "images/Crystal-Ball-God-Mix3.jpg"
       ],
-      "tag": "Lord Shiva, Ganesha, Lakshmi Devi Available"
+      "tag": "Lord Shiva, Ganesha Available"
     },
     {
       "name": "Geometry",
@@ -286,7 +286,7 @@
     {
       "name": "Nebulizer",
       "price": 280,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Nebulizer.jpg",
       "sliderImages": [
         "images/Nebulizer1.jpg",

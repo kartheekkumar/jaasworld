@@ -15,7 +15,7 @@
     {
       "name": "Jewellery Box",
       "price": 140,
-      "quantity": 2,
+      "quantity": 1,
       "image": "images/Jewellery-Box.jpg",
       "sliderImages": [
         "images/Jewellery-Box1.jpg",
@@ -191,7 +191,7 @@
     {
       "name": "Ear Bottle",
       "price": 150,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/Ear-Bottle.jpg",
       "sliderImages": [
         "images/Ear-Bottle1.jpg",
@@ -238,7 +238,7 @@
     {
       "name": "Rain Coat",
       "price": 99,
-      "quantity": 2,
+      "quantity": 1,
       "image": "images/Rain-Coat.jpg",
       "sliderImages": [
         "images/Rain-Coat1.jpg",
@@ -334,7 +334,7 @@
     {
       "name": "K12 Speaker",
       "price": 350,
-      "quantity": 3,
+      "quantity": 2,
       "image": "images/K12-Speaker.jpg",
       "sliderImages": [
         "images/K12-Speaker1.jpg",

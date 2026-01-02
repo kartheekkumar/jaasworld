@@ -165,13 +165,10 @@
             <div id="currentImagePreview" style="margin-top: 10px"></div>
           </div>
           <div class="form-group">
-            <label for="productSliderImages"
-              >Slider Images (one per line):</label
-            >
-            <textarea
-              id="productSliderImages"
-              placeholder="image1.jpg&#10;image2.jpg"
-            ></textarea>
+            <label for="productSliderFiles">Slider Images:</label>
+            <input type="file" id="productSliderFiles" accept="image/*" multiple />
+            <small>Select one or more images to add to the slider</small>
+            <div id="sliderImagesPreview" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;"></div>
           </div>
           <div class="form-group">
             <label for="productTag">Tag:</label>
@@ -387,8 +384,8 @@
         document.getElementById("productPrice").value = "";
         document.getElementById("productQuantity").value = "";
         document.getElementById("productImage").value = "";
-        document.getElementById("productSliderImages").value = "";
-        document.getElementById("productTag").value = "";
+        document.getElementById("productSliderFiles").value = "";
+        document.getElementById("sliderImagesPreview").innerHTML = "";
         document.getElementById("currentImagePreview").innerHTML = "";
         document.getElementById("productForm").style.display = "block";
       }
@@ -401,16 +398,39 @@
         document.getElementById("productName").value = product.name;
         document.getElementById("productPrice").value = product.price;
         document.getElementById("productQuantity").value = product.quantity;
-        document.getElementById("productImage").value = ""; // Clear file input
-        document.getElementById("productSliderImages").value =
-          product.sliderImages ? product.sliderImages.join("\n") : "";
+        document.getElementById("productSliderFiles").value = "";
         document.getElementById("productTag").value = product.tag || "";
 
         // Show current image preview
         const preview = document.getElementById("currentImagePreview");
         preview.innerHTML = `<img src="${product.image}" alt="Current image" style="max-width: 200px; max-height: 200px;" />`;
 
+        // Show slider images preview
+        renderSliderPreviews(product.sliderImages || []);
+
         document.getElementById("productForm").style.display = "block";
+      }
+
+      let currentProductSliderImages = [];
+
+      function renderSliderPreviews(images) {
+        currentProductSliderImages = images;
+        const container = document.getElementById("sliderImagesPreview");
+        container.innerHTML = "";
+        images.forEach((img, idx) => {
+          const div = document.createElement("div");
+          div.style.position = "relative";
+          div.innerHTML = `
+            <img src="${img}" style="width: 80px; height: 80px; object-fit: cover; border: 1px solid #ccc; border-radius: 4px;">
+            <button type="button" onclick="removeSliderImage(${idx})" style="position: absolute; top: -5px; right: -5px; background: red; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;">&times;</button>
+          `;
+          container.appendChild(div);
+        });
+      }
+
+      function removeSliderImage(idx) {
+        currentProductSliderImages.splice(idx, 1);
+        renderSliderPreviews(currentProductSliderImages);
       }
 
       function cancelEdit() {
@@ -441,15 +461,28 @@
           }
         }
 
+        const sliderFiles = document.getElementById("productSliderFiles").files;
+        let sliderImages = [...currentProductSliderImages];
+
+        // Upload new slider images
+        for (let i = 0; i < sliderFiles.length; i++) {
+          const file = sliderFiles[i];
+          const filename = `slider_${name.replace(/[^a-zA-Z0-9]/g, "_")}_${Date.now()}_${i}.${file.name.split(".").pop()}`;
+          try {
+            const uploadedUrl = await uploadImage(file, filename);
+            sliderImages.push(uploadedUrl);
+          } catch (error) {
+            showMessage(`Slider image upload failed: ${error.message}`, "error");
+            return;
+          }
+        }
+
         const productData = {
           name: name,
           price: parseFloat(document.getElementById("productPrice").value),
           quantity: parseInt(document.getElementById("productQuantity").value),
           image: imageUrl,
-          sliderImages: document
-            .getElementById("productSliderImages")
-            .value.split("\n")
-            .filter((url) => url.trim()),
+          sliderImages: sliderImages,
           tag: document.getElementById("productTag").value || "",
         };
 

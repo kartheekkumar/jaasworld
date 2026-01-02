@@ -205,35 +205,84 @@
           return;
         }
 
-        async function updateProductsJson() {
-          try {
-            const response = await fetch(
-              `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
-              {
-                headers: {
-                  Authorization: `token ${githubToken}`,
-                  Accept: "application/vnd.github.v3+json",
-                },
-              }
-            );
+        showMessage(`Loading products from ${repoOwner}/${repoName}...`, "info");
 
-            if (!response.ok) {
-              throw new Error(`GitHub API error: ${response.status}`);
+        try {
+          const response = await fetch(
+            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
+            {
+              headers: {
+                Authorization: `token ${githubToken}`,
+                Accept: "application/vnd.github.v3+json",
+              },
             }
+          );
 
-            const data = await response.json();
-            const content = atob(data.content);
-            products = JSON.parse(content);
-
-            renderProductsTable();
-            document.getElementById("productForm").style.display = "none";
-            showMessage("Products loaded successfully", "success");
-          } catch (error) {
-            showMessage(`Error loading products: ${error.message}`, "error");
+          if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
           }
-        }
 
-        function renderProductsTable() {
+          const data = await response.json();
+          const content = atob(data.content);
+          products = JSON.parse(content);
+
+          renderProductsTable();
+          document.getElementById("productForm").style.display = "none";
+          showMessage("Products loaded successfully", "success");
+        } catch (error) {
+          showMessage(`Error loading products: ${error.message}`, "error");
+        }
+      }
+
+      async function updateProductsJson() {
+        try {
+          // First, get the current file to get the SHA
+          const response = await fetch(
+            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
+            {
+              headers: {
+                Authorization: `token ${githubToken}`,
+                Accept: "application/vnd.github.v3+json",
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+          }
+
+          const fileData = await response.json();
+          const sha = fileData.sha;
+
+          // Update the file
+          const updateResponse = await fetch(
+            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
+            {
+              method: "PUT",
+              headers: {
+                Authorization: `token ${githubToken}`,
+                Accept: "application/vnd.github.v3+json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                message: "Update products.json via admin panel",
+                content: btoa(JSON.stringify(products, null, 2)),
+                sha: sha,
+              }),
+            }
+          );
+
+          if (!updateResponse.ok) {
+            throw new Error(`Update failed: ${updateResponse.status}`);
+          }
+
+          showMessage("Products updated successfully", "success");
+        } catch (error) {
+          showMessage(`Error updating products: ${error.message}`, "error");
+        }
+      }
+
+      function renderProductsTable() {
           const tableHtml = `
                 <table class="product-table">
                     <thead>
@@ -400,51 +449,6 @@
             reader.onerror = () => reject(new Error("File reading failed"));
             reader.readAsDataURL(file);
           });
-        }
-        try {
-          // First, get the current file to get the SHA
-          const response = await fetch(
-            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
-            {
-              headers: {
-                Authorization: `token ${githubToken}`,
-                Accept: "application/vnd.github.v3+json",
-              },
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error(`GitHub API error: ${response.status}`);
-          }
-
-          const fileData = await response.json();
-          const sha = fileData.sha;
-
-          // Update the file
-          const updateResponse = await fetch(
-            `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
-            {
-              method: "PUT",
-              headers: {
-                Authorization: `token ${githubToken}`,
-                Accept: "application/vnd.github.v3+json",
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                message: "Update products.json via admin panel",
-                content: btoa(JSON.stringify(products, null, 2)),
-                sha: sha,
-              }),
-            }
-          );
-
-          if (!updateResponse.ok) {
-            throw new Error(`Update failed: ${updateResponse.status}`);
-          }
-
-          showMessage("Products updated successfully", "success");
-        } catch (error) {
-          showMessage(`Error updating products: ${error.message}`, "error");
         }
       }
     </script>

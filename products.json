@@ -3,7 +3,7 @@
     {
       "name": "EMS Massager",
       "price": 150,
-      "quantity": 0,
+      "quantity": 1,
       "image": "images/EMS-Massager.jpg",
       "sliderImages": [
         "images/EMS-Massager1.jpg",
@@ -101,7 +101,11 @@
       "price": 180,
       "quantity": 5,
       "image": "images/Mop.jpg",
-      "sliderImages": ["images/Mop1.jpg", "images/Mop2.jpg", "images/Mop3.jpg"],
+      "sliderImages": [
+        "images/Mop1.jpg",
+        "images/Mop2.jpg",
+        "images/Mop3.jpg"
+      ],
       "tag": ""
     },
     {
@@ -348,7 +352,9 @@
       "price": 460,
       "quantity": 3,
       "image": "images/Animal-(1126).jpg",
-      "sliderImages": ["images/Animal-(1126)1.jpg"],
+      "sliderImages": [
+        "images/Animal-(1126)1.jpg"
+      ],
       "tag": "Only Black & White colors available"
     },
     {

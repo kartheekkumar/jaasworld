@@ -205,7 +205,10 @@
           return;
         }
 
-        showMessage(`Loading products from ${repoOwner}/${repoName}...`, "info");
+        showMessage(
+          `Loading products from ${repoOwner}/${repoName}...`,
+          "info"
+        );
 
         try {
           const response = await fetch(
@@ -382,9 +385,7 @@
         const productData = {
           name: name,
           price: parseFloat(document.getElementById("productPrice").value),
-          quantity: parseInt(
-            document.getElementById("productQuantity").value
-          ),
+          quantity: parseInt(document.getElementById("productQuantity").value),
           image: imageUrl,
           sliderImages: document
             .getElementById("productSliderImages")
@@ -449,7 +450,6 @@
           reader.onerror = () => reject(new Error("File reading failed"));
           reader.readAsDataURL(file);
         });
-      }
       }
     </script>
   </body>

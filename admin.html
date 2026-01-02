@@ -215,18 +215,26 @@
             `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
             {
               headers: {
-                Authorization: `token ${githubToken}`,
+                Authorization: `Bearer ${githubToken}`,
                 Accept: "application/vnd.github.v3+json",
               },
             }
           );
 
           if (!response.ok) {
-            throw new Error(`GitHub API error: ${response.status}`);
+            let errorMessage = `GitHub API error: ${response.status}`;
+            try {
+              const errData = await response.json();
+              if (errData.message) errorMessage += ` - ${errData.message}`;
+              if (response.status === 403) {
+                errorMessage += " (Check token permissions/scopes)";
+              }
+            } catch (e) {}
+            throw new Error(errorMessage);
           }
 
           const data = await response.json();
-          const content = atob(data.content);
+          const content = decodeBase64Utf8(data.content);
           products = JSON.parse(content);
 
           renderProductsTable();
@@ -237,6 +245,25 @@
         }
       }
 
+      function encodeBase64Utf8(str) {
+        return btoa(
+          encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+            return String.fromCharCode("0x" + p1);
+          })
+        );
+      }
+
+      function decodeBase64Utf8(str) {
+        return decodeURIComponent(
+          atob(str)
+            .split("")
+            .map(function (c) {
+              return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join("")
+        );
+      }
+
       async function updateProductsJson() {
         try {
           // First, get the current file to get the SHA
@@ -244,14 +271,19 @@
             `https://api.github.com/repos/${repoOwner}/${repoName}/contents/products.json`,
             {
               headers: {
-                Authorization: `token ${githubToken}`,
+                Authorization: `Bearer ${githubToken}`,
                 Accept: "application/vnd.github.v3+json",
               },
             }
           );
 
           if (!response.ok) {
-            throw new Error(`GitHub API error: ${response.status}`);
+            let errorMessage = `GitHub API error: ${response.status}`;
+            try {
+              const errData = await response.json();
+              if (errData.message) errorMessage += ` - ${errData.message}`;
+            } catch (e) {}
+            throw new Error(errorMessage);
           }
 
           const fileData = await response.json();
@@ -263,20 +295,28 @@
             {
               method: "PUT",
               headers: {
-                Authorization: `token ${githubToken}`,
+                Authorization: `Bearer ${githubToken}`,
                 Accept: "application/vnd.github.v3+json",
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
                 message: "Update products.json via admin panel",
-                content: btoa(JSON.stringify(products, null, 2)),
+                content: encodeBase64Utf8(JSON.stringify(products, null, 2)),
                 sha: sha,
               }),
             }
           );
 
           if (!updateResponse.ok) {
-            throw new Error(`Update failed: ${updateResponse.status}`);
+            let errorMessage = `Update failed: ${updateResponse.status}`;
+            try {
+              const errData = await updateResponse.json();
+              if (errData.message) errorMessage += ` - ${errData.message}`;
+              if (updateResponse.status === 403) {
+                errorMessage += " (Check token permissions/scopes)";
+              }
+            } catch (e) {}
+            throw new Error(errorMessage);
           }
 
           showMessage("Products updated successfully", "success");
@@ -425,7 +465,7 @@
                 {
                   method: "PUT",
                   headers: {
-                    Authorization: `token ${githubToken}`,
+                    Authorization: `Bearer ${githubToken}`,
                     Accept: "application/vnd.github.v3+json",
                     "Content-Type": "application/json",
                   },
@@ -437,7 +477,12 @@
               );
 
               if (!response.ok) {
-                throw new Error(`Upload failed: ${response.status}`);
+                let errorMessage = `Upload failed: ${response.status}`;
+                try {
+                  const errData = await response.json();
+                  if (errData.message) errorMessage += ` - ${errData.message}`;
+                } catch (e) {}
+                throw new Error(errorMessage);
               }
 
               resolve(

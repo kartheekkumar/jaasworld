@@ -3,7 +3,7 @@
     {
       "name": "EMS Massager",
       "price": 150,
-      "quantity": 1,
+      "quantity": 0,
       "image": "images/EMS-Massager.jpg",
       "sliderImages": [
         "images/EMS-Massager1.jpg",

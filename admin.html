@@ -118,12 +118,22 @@
       </div>
 
       <div class="token-input">
-        <label for="githubToken">GitHub Personal Access Token:</label>
-        <input
-          type="password"
-          id="githubToken"
-          placeholder="Enter your GitHub token"
-        />
+        <div class="form-group" style="display: inline-block; width: 200px; margin-right: 10px;">
+          <label for="repoOwner">Repo Owner:</label>
+          <input type="text" id="repoOwner" value="kartheekkumar" placeholder="Owner" />
+        </div>
+        <div class="form-group" style="display: inline-block; width: 200px; margin-right: 10px;">
+          <label for="repoName">Repo Name:</label>
+          <input type="text" id="repoName" value="jaasworld" placeholder="Repo" />
+        </div>
+        <div class="form-group" style="display: inline-block; width: 300px; margin-right: 10px;">
+          <label for="githubToken">GitHub Personal Access Token:</label>
+          <input
+            type="password"
+            id="githubToken"
+            placeholder="Enter your GitHub token"
+          />
+        </div>
         <button class="btn btn-primary" onclick="loadProducts()">
           Load Products
         </button>
@@ -200,6 +210,9 @@
 
       async function loadProducts() {
         githubToken = document.getElementById("githubToken").value;
+        repoOwner = document.getElementById("repoOwner").value;
+        repoName = document.getElementById("repoName").value;
+
         if (!githubToken) {
           showMessage("Please enter GitHub token", "error");
           return;
@@ -231,6 +244,12 @@
               }
             } catch (e) {}
             throw new Error(errorMessage);
+          }
+
+          // Optional: Check scopes for classic tokens
+          const scopes = response.headers.get("X-OAuth-Scopes");
+          if (scopes !== null && !scopes.includes("repo")) {
+            showMessage("Warning: Token might lack 'repo' scope. Saves might fail.", "error");
           }
 
           const data = await response.json();

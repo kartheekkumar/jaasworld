@@ -380,19 +380,6 @@
         "images/Ultra-Pods3.jpg"
       ],
       "tag": ""
-    },
-    {
-      "name": "test product",
-      "price": 100,
-      "quantity": 10,
-      "image": "images/test_product_1767334463274.svg",
-      "sliderImages": [
-        "images/slider_test_product_1767334272712_0.svg",
-        "images/slider_test_product_1767334273620_1.svg",
-        "images/slider_test_product_1767334274545_2.svg",
-        "images/slider_test_product_1767334275387_3.svg"
-      ],
-      "tag": "New"
     }
   ]
 }

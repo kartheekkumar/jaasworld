@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jaasworld Product Catalog</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -18,22 +22,99 @@
       <div class="search-box">
         <input id="searchInput" type="text" placeholder="Search products..." />
       </div>
+      <!-- Cart button -->
+      <div
+        class="cart-button"
+        id="cartButton"
+        role="button"
+        tabindex="0"
+        aria-label="Open cart"
+      >
+        <span class="cart-count" id="cartCount">0</span>🛒
+      </div>
     </header>
 
-    <!-- ✅ Title + Sort -->
-    <div class="sort-title-row">
-      <h1 class="title">Product Catalog</h1>
-      <div class="sort-box">
-        <select id="sortSelect">
-          <option value="">Sort by Price</option>
-          <option value="low">Low → High</option>
-          <option value="high">High → Low</option>
-        </select>
-      </div>
+    <!-- Free Shipping Banner -->
+    <div
+      id="mainFreeShippingBanner"
+      class="free-shipping-banner"
+      style="display: none"
+    >
+      <span class="shipping-icon">🚚</span> Free Shipping Unlocked!
     </div>
 
-    <!-- ✅ Product List -->
-    <div id="product-list" class="product-grid"></div>
+    <!-- ✅ Title + Sort -->
+    <main class="container">
+      <div class="shop-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="filter-section">
+            <h3>Search</h3>
+            <input
+              id="sidebarSearch"
+              type="text"
+              placeholder="Search products..."
+            />
+          </div>
+          <div class="filter-section">
+            <h3>Price Range</h3>
+            <input type="range" id="priceRange" min="0" max="500" value="500" />
+            <div class="price-display">₹0 - ₹<span id="maxVal">500</span></div>
+          </div>
+          <div class="filter-section">
+            <h3>Availability</h3>
+            <label>
+              <input type="checkbox" id="inStockFilter" /> In Stock Only
+            </label>
+          </div>
+          <div class="filter-section">
+            <h3>Categories</h3>
+            <label
+              ><input type="checkbox" class="category-filter" value="Gadgets" />
+              Gadgets</label
+            >
+            <label
+              ><input type="checkbox" class="category-filter" value="Home" />
+              Home</label
+            >
+            <label
+              ><input type="checkbox" class="category-filter" value="Tools" />
+              Tools</label
+            >
+            <label
+              ><input type="checkbox" class="category-filter" value="Health" />
+              Health</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="category-filter"
+                value="Electronics"
+              />
+              Electronics</label
+            >
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+          <div class="sort-title-row">
+            <h1 class="title">Shop</h1>
+            <div class="results-count" id="resultsCount">Showing 0 results</div>
+            <div class="sort-box">
+              <select id="sortSelect">
+                <option value="">Sort by Price</option>
+                <option value="low">Low → High</option>
+                <option value="high">High → Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ✅ Product List -->
+          <div id="product-list" class="product-grid"></div>
+        </div>
+      </div>
+    </main>
 
     <!-- ✅ Floating Support Button -->
     <div class="floating-support" id="supportBtn">
@@ -110,6 +191,33 @@
       </div>
     </div>
 
+    <!-- Cart Overlay & Drawer -->
+    <div id="cartOverlay" class="cart-overlay" style="display: none"></div>
+    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="close-cart" aria-label="Close cart">
+          &times;
+        </button>
+      </div>
+      <div
+        id="freeShippingBanner"
+        class="free-shipping-banner"
+        style="display: none"
+      >
+        <span class="shipping-icon">🚚</span> Free Shipping Unlocked!
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div>Total:</div>
+          <div id="cartTotal">₹0</div>
+        </div>
+        <button id="viewCart" class="view-cart-btn">View Cart</button>
+        <button id="proceedToBuy" class="proceed-btn">Checkout</button>
+      </div>
+    </aside>
+
     <!-- ✅ Bottom Bar (Mobile) -->
     <div class="mobile-bottom-bar">
       <input id="mobileSearch" type="text" placeholder="Search..." />
@@ -125,3 +233,6 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>

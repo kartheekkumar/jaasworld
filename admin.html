@@ -242,7 +242,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        ${products
+                        ${products.products
                           .map(
                             (product, index) => `
                             <tr>
@@ -311,9 +311,9 @@
         };
 
         if (index === -1) {
-          products.push(productData);
+          products.products.push(productData);
         } else {
-          products[index] = productData;
+          products.products[index] = productData;
         }
 
         await updateProductsJson();
@@ -323,7 +323,7 @@
 
       async function deleteProduct(index) {
         if (confirm("Are you sure you want to delete this product?")) {
-          products.splice(index, 1);
+          products.products.splice(index, 1);
           await updateProductsJson();
           renderProductsTable();
         }
@@ -361,7 +361,7 @@
               },
               body: JSON.stringify({
                 message: "Update products.json via admin panel",
-                content: btoa(JSON.stringify({ products }, null, 2)),
+                content: btoa(JSON.stringify(products, null, 2)),
                 sha: sha,
               }),
             }
